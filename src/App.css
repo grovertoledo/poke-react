@@ -17,4 +17,9 @@ main {
     display: grid;
     grid-template-rows: 1fr 4.5fr 4.5fr;
     padding: 40px 30px 20px;
+    min-height: 100vh;
+    justify-content: center;
+}
+main > section {
+    max-width: 1000px;
 }

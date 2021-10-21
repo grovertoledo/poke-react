@@ -2,10 +2,12 @@
     display: grid;
     height: 300px;
     grid-template-columns: 1fr 1fr;
+    padding: 15px 30px 0;
 }
 .poke-info .poke-view {
-    display: grid;
-    grid-template-rows: 4fr 1fr;
+    display: flexbox;
+    justify-self: center;
+    align-items: center;
 }
 .poke-info .poke-view .pokemon {
     justify-self: center;
@@ -15,7 +17,7 @@
     display: flex;
     justify-self: center;
     align-items: center;
-    width: 60%;
+    width: 70%;
 }
 .poke-info img {
     width: 300px;

@@ -18,7 +18,7 @@ function Header() {
           <nav>
               <section className="nav-logo-container">
                   <a href="/"><img src={navIcon} alt="Logo de pokedex"></img></a>
-                  <span>Pokédex</span>
+                  <span>PokeFinder</span>
               </section>
               <section className="about-me">
                   <a href="https://github.com/grovertoledo98">Sobre mí</a>

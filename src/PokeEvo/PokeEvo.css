@@ -1,0 +1,7 @@
+.evolution-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.evolution-number img {
+    height: 120px;
+}

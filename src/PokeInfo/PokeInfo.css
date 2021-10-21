@@ -1,0 +1,25 @@
+.poke-info {
+    display: grid;
+    height: 300px;
+    grid-template-columns: 1fr 1fr;
+}
+.poke-info .poke-view {
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+.poke-info .poke-view .pokemon {
+    justify-self: center;
+    align-items: center;
+}
+.poke-info .poke-about {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    width: 60%;
+}
+.poke-info img {
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.699);
+    border: 7px solid rgb(128, 58, 1);
+    border-radius: 20px;
+}

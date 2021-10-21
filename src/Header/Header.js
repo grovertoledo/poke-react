@@ -16,11 +16,11 @@ function Header() {
             </div>
           </section>
           <nav>
-              <section class="nav-logo-container">
+              <section className="nav-logo-container">
                   <a href="/"><img src={navIcon} alt="Logo de pokedex"></img></a>
                   <span>Pokédex</span>
               </section>
-              <section class="about-me">
+              <section className="about-me">
                   <a href="https://github.com/grovertoledo98">Sobre mí</a>
               </section>
           </nav>

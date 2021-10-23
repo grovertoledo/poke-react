@@ -1,29 +1,24 @@
 import React from 'react';
 import "./PokeEvo.css";
-import evo1 from "../assets/evo1.png";
-import evo2 from "../assets/evo2.png";
-import PokemonTest from "../assets/pikachu.png";
 import Arrow from "../assets/arrow.png";
+import { DataContext } from '../DataContext/DataContext';
 
 function PokeEvo () {
+    const {
+        evos,
+        evoSprites,
+    } = React.useContext(DataContext)
     return (
         <section className="evolution">
             <h3>Evoluciones:</h3>
             <div className="evolution-number">
-                <div>
-                    <img src={evo1} alt=""></img>
-                    <p>Pichu Nº</p>
-                    <img src={Arrow} alt=""></img>
-                </div>
-                <div>
-                    <img src={PokemonTest} alt=""></img>
-                    <p>Pikachu Nº</p>
-                    <img src={Arrow} alt=""></img>
-                </div>
-                <div>
-                    <img src={evo2} alt=""></img>
-                    <p>Raichu Nº</p>
-                </div>
+                {evos.map((evo) =>
+                    <div key={evo.species_name}>
+                        <img src={evoSprites[evos.indexOf(evo)]} alt=""></img>
+                        <p>{evo.species_name}</p>
+                        <img src={Arrow} alt=""></img>
+                    </div>
+                )}
             </div>
         </section>
     );

@@ -21,7 +21,7 @@
 }
 .poke-info img {
     width: 300px;
-    background-color: rgba(0, 0, 0, 0.699);
+    background-color: rgb(240, 225, 158);
     border: 7px solid rgb(128, 58, 1);
     border-radius: 20px;
 }

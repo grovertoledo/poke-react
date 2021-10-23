@@ -1,24 +1,32 @@
 import React from 'react';
 import "./PokeInfo.css";
-import PokemonTest from "../assets/pikachu.png";
+import { DataContext} from "../DataContext/DataContext";
 
 function PokeInfo () {
+    const {
+        info,
+    } = React.useContext(DataContext);
+    const pokeTypes = info.types;
     return (
         <section className="poke-info">
             <section className="poke-view">
                 <div>
-                    <p>Pikachu Nº 025</p>
-                    <img src={PokemonTest} alt=""></img>
+                    <p>{info.name} Nº {info.number}</p>
+                    <img src={info.img} alt=""></img>
                 </div>
                 <div className="types">
                     <h3>Tipos:</h3>
-                    <p>Eléctrico</p>
+                    {pokeTypes.map(
+                        (pokeType) => <p key={pokeType}>
+                            {pokeType}
+                            </p>
+                    )}
                 </div>
             </section>
             <section className="poke-about">
                 <div className="description">
                     <h3>Descripción:</h3>
-                    <p>Cuanto más potente es la energía eléctrica que genera este Pokémon, más suaves y elásticas se vuelven las bolsas de sus mejillas.</p>
+                    <p>{info.description}</p>
                 </div>
             </section>
         </section>

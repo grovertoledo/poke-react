@@ -114,6 +114,7 @@ function DataProvider(props) {
 
             do {
                 const evoDetails = evoData.evolution_details[0];
+                const evosNumber = evoData.evolves_to.length;
 
                 evoChain.push({
                     species_name: evoData.species.name,
@@ -121,6 +122,26 @@ function DataProvider(props) {
                     trigger_name: !evoDetails ? null : evoDetails.trigger_name,
                     item: !evoDetails ? null : evoDetails.item
                 });
+                
+                if(evosNumber > 1) {
+                    for (let i = 1; i < evosNumber; i ++) {
+                        evoChain.push ({
+                            species_name: evoData.evolves_to[i].species.name,
+                            min_level: !evoDetails ? 1 : evoDetails.min_level,
+                            trigger_name: !evoDetails ? null : evoDetails.trigger_name,
+                            item: !evoDetails ? null : evoDetails.item
+                        })
+                    };
+                    if (evoData.evolves_to[1].evolves_to[0]) {
+                        const secondEvolution = evoData.evolves_to[1].evolves_to[0];
+                        evoChain.push({
+                            species_name: secondEvolution.species.name,
+                            min_level: !evoDetails ? 1 : evoDetails.min_level,
+                            trigger_name: !evoDetails ? null : evoDetails.trigger_name,
+                            item: !evoDetails ? null : evoDetails.item
+                        })
+                    }
+                };
                 
                 evoData = evoData.evolves_to[0];
             } while (!!evoData && evoData.hasOwnProperty("evolves_to"));

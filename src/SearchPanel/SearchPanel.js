@@ -27,7 +27,7 @@ function SearchPanel () {
                         <datalist id="suggestions">
                             {pokemons.map((pokemon) => <option key={pokemon.name} value={pokemon.name}></option>)}
                         </datalist>
-                    <button type="submit">Busca</button>
+                    <button type="submit">Bùscalo ya!</button>
                 </form>
             </div>
             <div className="search-text">

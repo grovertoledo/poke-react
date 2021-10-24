@@ -7,6 +7,17 @@
     justify-content: center;
     align-items: center;    
 }
+.search-bar .search form {
+    display: flexbox;
+    max-width: 37vw;
+    justify-items: center;
+}
+.search input {
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
 .search-bar .search-text {
     justify-content: center;
     display: flex;

@@ -1,5 +1,5 @@
 import React from 'react';
-import "../font/flaticon.css";
+import "../font/social/flaticon.css";
 import navIcon from "../assets/icon.png";
 import "./Header.css";
 

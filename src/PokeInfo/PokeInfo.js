@@ -5,27 +5,33 @@ import { DataContext} from "../DataContext/DataContext";
 function PokeInfo () {
     const {
         info,
+        capitalize
     } = React.useContext(DataContext);
-    const pokeTypes = info.types;
+
+    const appName = capitalize(info.name);
+    const pokeTypes = capitalize(info.types);
+    
     return (
         <section className="poke-info">
             <section className="poke-view">
                 <div>
-                    <p>{info.name} Nº {info.number}</p>
+                    <h2>{appName} Nº {info.number}</h2>
                     <img src={info.img} alt=""></img>
                 </div>
                 <div className="types">
-                    <h3>Tipos:</h3>
-                    {pokeTypes.map(
-                        (pokeType) => <p key={pokeType}>
-                            {pokeType}
-                            </p>
-                    )}
+                    <h3>Types:</h3>
+                    <ol>
+                        {pokeTypes.map(
+                            (pokeType) => <li key={pokeType}>
+                                {pokeType}
+                                </li>
+                        )}
+                    </ol>
                 </div>
             </section>
             <section className="poke-about">
                 <div className="description">
-                    <h3>Descripción:</h3>
+                    <h3>Description:</h3>
                     <p>{info.description}</p>
                 </div>
             </section>

@@ -6,6 +6,20 @@ const infoUrl ="https://pokeapi.co/api/v2/pokemon/";
 const descriptionUrl = "https://pokeapi.co/api/v2/pokemon-species/";
 const spriteUrl = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
+function capitalize(i) {
+    if (typeof i === "string") {
+        const capitalized = i.charAt(0).toUpperCase() + i.slice(1);
+        return capitalized;
+    } else {
+        const capitalized = [];
+        i.forEach(element => {
+            const capitalizedElement = element.charAt(0).toUpperCase() + element.slice(1);
+            capitalized.push(capitalizedElement);
+        });
+        return capitalized;
+    };
+}
+
 const DataContext = React.createContext();
 
 function DataProvider(props) {
@@ -45,11 +59,6 @@ function DataProvider(props) {
     );
 
     const [evoSprites, setEvoSprites] = React.useState(
-        // [
-        //     {sprite:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"},
-        //     {sprite:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"},
-        //     {sprite:"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"}
-        // ]
         [
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
             "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
@@ -97,7 +106,7 @@ function DataProvider(props) {
                 number: data.id,
                 img: imageURL,
                 types: typeElements,
-                description: `${descriptionData.genera[5].genus} ${descriptionData.flavor_text_entries[26].flavor_text} ${descriptionData.flavor_text_entries[34].flavor_text}`,
+                description: `${descriptionData.genera[3].genus.toUpperCase()} ${capitalize(descriptionData.flavor_text_entries[0].flavor_text.toLowerCase())} ${capitalize(descriptionData.flavor_text_entries[2].flavor_text.toLowerCase())}`,
                 evolutionChain: descriptionData.evolution_chain.url,
             });
         };
@@ -173,8 +182,10 @@ function DataProvider(props) {
         info,
         setInfo,
         evos,
-        evoSprites
+        evoSprites,
+        capitalize
     };
+
     return (
         <DataContext.Provider value={providerValue}>
             {props.children}

@@ -7,18 +7,26 @@ function PokeEvo () {
     const {
         evos,
         evoSprites,
-    } = React.useContext(DataContext)
+        capitalize,
+    } = React.useContext(DataContext);
+    
     return (
         <section className="evolution">
-            <h3>Evoluciones:</h3>
+            <h2>Evolutions:</h2>
             <div className="evolution-number">
-                {evos.map((evo) =>
+                {(evos.length > 1) && evos.map((evo) =>
                     <div key={evo.species_name}>
                         <img src={evoSprites[evos.indexOf(evo)]} alt=""></img>
-                        <p>{evo.species_name}</p>
-                        <img src={Arrow} alt=""></img>
+                        <p>{capitalize(evo.species_name)}</p>
                     </div>
                 )}
+                {(evos.length === 1) && 
+                    <div key={evos[0].species_name}>
+                        <img src={evoSprites[0]} alt=""></img>
+                        <p>{capitalize(evos[0].species_name)}</p>
+                        <p>This pokémon do not evolve.</p>
+                    </div>
+                }
             </div>
         </section>
     );

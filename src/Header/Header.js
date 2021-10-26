@@ -9,7 +9,7 @@ function Header() {
           <section className="header-icons">
             <div className="icons">
                 <a href="/"><span className="flaticon-001-facebook"></span></a>
-                <a href="/"><span className="flaticon-002-twitter"></span></a>
+                <a href="/"><span className="flaticon-013-twitter-1"></span></a>
                 <a href="/"><span className="flaticon-011-instagram"></span></a>
                 <a href="/"><span className="flaticon-010-linkedin"></span></a>
                 <a href="/"><span className="flaticon-003-whatsapp"></span></a>
@@ -21,7 +21,7 @@ function Header() {
                   <span>PokeFinder</span>
               </section>
               <section className="about-me">
-                  <a href="https://github.com/grovertoledo98">Sobre mí</a>
+                  <a href="https://github.com/grovertoledo98">About me</a>
               </section>
           </nav>
         </header>

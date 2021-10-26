@@ -1,12 +1,32 @@
 .evolution {
     padding: 15px 30px 0;
 }
+.evolution h2 {
+    text-align: center;
+}
 .evolution-number {
     padding: 25px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
 }
+.opTwo {
+    grid-template-columns: 1fr 1fr;
+}
+.opThree {
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .evolution-number img {
+    display: flex;
+    justify-items: center;
     height: 120px;
+    width: 120px;
+    margin: auto;
+}
+.evolution-number div {
+    display: flex;
+    flex-direction: column;
+}
+.evolution-number h3, p {
+    display: flex;
+    justify-content: center;
 }

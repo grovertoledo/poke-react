@@ -28,6 +28,8 @@ function DataProvider(props) {
 
     const [searchValue, setSearchValue] = React.useState("bulbasaur");
 
+    const [openModal, setOpenModal] = React.useState(false);
+    
     const [info, setInfo] = React.useState({
         name: "Bulbasaur",
         number: 1,
@@ -66,6 +68,12 @@ function DataProvider(props) {
         ]
     )
 
+    React.useEffect(() => {
+        setTimeout(() => {
+            setOpenModal(false);
+        }, 1500);
+    }, []);
+    
     React.useEffect(() => {
         const fetchPokemons = async () => {
           const response = await fetch(url);
@@ -173,6 +181,10 @@ function DataProvider(props) {
         };
         getSprites();
     }, [evos, pokemons]);
+
+    React.useEffect(() => {
+        console.log("effects")
+    }, [info]);
     
     const providerValue = {
         pokemons,
@@ -183,7 +195,8 @@ function DataProvider(props) {
         setInfo,
         evos,
         evoSprites,
-        capitalize
+        capitalize,
+        openModal,
     };
 
     return (

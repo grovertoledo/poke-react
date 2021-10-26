@@ -1,6 +1,6 @@
 .poke-info {
     display: grid;
-    height: 300px;
+    height: auto;
     grid-template-columns: 1fr 1fr;
     padding: 15px 30px 0;
 }
@@ -19,9 +19,15 @@
     align-items: center;
     width: 70%;
 }
+.poke-about p {
+    text-align: justify;
+}
 .poke-info img {
     width: 300px;
     background-color: rgb(240, 225, 158);
     border: 7px solid rgb(128, 58, 1);
     border-radius: 20px;
+}
+.poke-info .types {
+    margin-left: 45px;
 }

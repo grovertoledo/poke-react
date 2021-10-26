@@ -1,0 +1,97 @@
+.ModalLoader {
+    background-color: rgb(54, 54, 54);
+    position: fixed;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: loader 1.5s linear forwards;
+};
+
+@keyframes loader {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+    95% {
+        opacity: 1;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.ModalLoader div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    /* animation: scaling 1.5s ease-in-out infinite;
+    transform: scale(0); */
+}
+.ModalLoader div:nth-child(1) {
+    background-color: black;
+    animation-delay: 0.2s ;
+    animation: scalingA 1s ease-in-out infinite;
+    transform: scale(0.1);
+}
+.ModalLoader div:nth-child(2) {
+    background-color: rgb(255, 153, 0);
+    animation-delay: 1s ;
+    animation: scalingB 1s ease-in-out infinite;
+    transform: scale(0.1);
+}
+.ModalLoader div:nth-child(3) {
+    background-color: rgb(180, 108, 0);
+    animation-delay: 0.6s ;
+    animation: scalingC 1s ease-in-out infinite;
+    transform: scale(0.1);
+}
+
+@keyframes scalingA {
+    0%, 100% {
+        background-color: black;
+        transform: scale(0.1);
+    }
+    40% {
+        transform: scale(1);
+        background-color: rgb(255, 153, 0);
+    }
+    50% {
+        background-color: rgb(180, 108, 0);
+        transform: scale(1);
+    }
+}
+@keyframes scalingB {
+    20% {
+        background-color: rgb(255, 153, 0);
+        transform: scale(0.1);
+    }
+    60% {
+        transform: scale(1);
+        background-color: rgb(180, 108, 0);
+    }
+    70% {
+        background-color: black;
+        transform: scale(1);
+    }
+}
+@keyframes scalingC {
+    40% {
+        background-color: black;
+        transform: scale(0.1);
+    }
+    80% {
+        transform: scale(1);
+        background-color: rgb(255, 153, 0);
+    }
+    90% {
+        transform: scale(1);
+        background-color: rgb(180, 108, 0);
+    }
+}

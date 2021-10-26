@@ -8,7 +8,8 @@ function SearchPanel () {
     const {
         pokemons,
         setSearchValue,
-        capitalize
+        capitalize,
+        searchText
     } = React.useContext(DataContext);
 
     const onSubmit = (event) => { 
@@ -33,7 +34,7 @@ function SearchPanel () {
             </div>
             <div className="search-text">
                 <div>
-                    <p>Search by pokémon's number or name from {pokemons.length} available.</p>
+                    <p>{searchText}</p>
                 </div>
             </div>
         </section>

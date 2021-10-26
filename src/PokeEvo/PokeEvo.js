@@ -23,7 +23,7 @@ function PokeEvo () {
                     <div key={evos[0].species_name}>
                         <img src={evoSprites[0]} alt=""></img>
                         <h3>{capitalize(evos[0].species_name)}</h3>
-                        <p>This pokémon do not evolve.</p>
+                        <p>This pokémon does not evolve.</p>
                     </div>
                 }
             </div>

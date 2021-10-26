@@ -28,22 +28,22 @@ function DataProvider(props) {
 
     const [searchValue, setSearchValue] = React.useState("bulbasaur");
 
+    const[searchText, setSearchText] = React.useState("")
+
     const [openModal, setOpenModal] = React.useState(true);
     
     const [info, setInfo] = React.useState({
-        name: "Bulbasaur",
+        name: "",
         number: 1,
-        img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-        types: [
-            "Grass",
-        ],
-        description: "A strange seed was planted on its back at birth.The plant sprouts and grows with this POKéMON.",
+        img: "",
+        types: [],
+        description: "",
         evolutionChain: "https://pokeapi.co/api/v2/evolution-chain/1/",
     });
 
     const [evos, setEvos] = React.useState(
         [{
-            species_name: "bulbasaur",
+            species_name: "",
             min_level: 1,
             trigger_name: null,
             item: null
@@ -62,9 +62,9 @@ function DataProvider(props) {
 
     const [evoSprites, setEvoSprites] = React.useState(
         [
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+            "",
+            "",
+            ""
         ]
     )
 
@@ -99,24 +99,29 @@ function DataProvider(props) {
     
     React.useEffect(() => {
         const fetchInfo = async () => {
-            const response = await fetch(`${infoUrl}${searchValue}`);
-            const data = await response.json();
-            const typeArray = data.types;
-            const typeElements = typeArray.map((element) => element.type.name);
+            try {
+                const response = await fetch(`${infoUrl}${searchValue}`);
+                const data = await response.json();
+                const typeArray = data.types;
+                const typeElements = typeArray.map((element) => element.type.name);
 
-            const descriptionResponse = await fetch(`${descriptionUrl}${searchValue}`);
-            const descriptionData = await descriptionResponse.json();
+                const descriptionResponse = await fetch(`${descriptionUrl}${searchValue}`);
+                const descriptionData = await descriptionResponse.json();
 
-            const imageURL = getImageURL(String(data.id));
-            
-            setInfo({
-                name: data.name,
-                number: data.id,
-                img: imageURL,
-                types: typeElements,
-                description: `${descriptionData.genera[3].genus.toUpperCase()} ${capitalize(descriptionData.flavor_text_entries[0].flavor_text.toLowerCase())} ${capitalize(descriptionData.flavor_text_entries[2].flavor_text.toLowerCase())}`,
-                evolutionChain: descriptionData.evolution_chain.url,
-            });
+                const imageURL = getImageURL(String(data.id));
+                
+                setInfo({
+                    name: data.name,
+                    number: data.id,
+                    img: imageURL,
+                    types: typeElements,
+                    description: `${descriptionData.genera[3].genus.toUpperCase()} ${capitalize(descriptionData.flavor_text_entries[0].flavor_text.toLowerCase())} ${capitalize(descriptionData.flavor_text_entries[2].flavor_text.toLowerCase())}`,
+                    evolutionChain: descriptionData.evolution_chain.url,
+                });
+                setSearchText("Look up for a pokémon from 894 available!")
+            } catch {
+                setSearchText("You did not select any pokémon!")
+            }
         };
         fetchInfo();
     }, [searchValue]);
@@ -181,10 +186,6 @@ function DataProvider(props) {
         };
         getSprites();
     }, [evos, pokemons]);
-
-    React.useEffect(() => {
-        console.log("effects")
-    }, [info]);
     
     const providerValue = {
         pokemons,
@@ -197,6 +198,7 @@ function DataProvider(props) {
         evoSprites,
         capitalize,
         openModal,
+        searchText
     };
 
     return (

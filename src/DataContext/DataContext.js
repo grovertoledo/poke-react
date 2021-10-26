@@ -28,7 +28,7 @@ function DataProvider(props) {
 
     const [searchValue, setSearchValue] = React.useState("bulbasaur");
 
-    const [openModal, setOpenModal] = React.useState(false);
+    const [openModal, setOpenModal] = React.useState(true);
     
     const [info, setInfo] = React.useState({
         name: "Bulbasaur",

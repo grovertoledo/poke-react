@@ -30,3 +30,18 @@
     display: flex;
     justify-content: center;
 }
+@media (max-width: 600px) {
+    .opTwo {
+        grid-template-columns: 1fr;
+    }
+    .opThree {
+        grid-template-columns: 1fr;
+    }
+    .evolution-number img {
+        display: flex;
+        justify-items: center;
+        height: 150px;
+        width: 150px;
+        margin: auto;
+    }
+}

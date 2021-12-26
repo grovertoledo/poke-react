@@ -2,16 +2,22 @@
     display: grid;
     height: auto;
     grid-template-columns: 1fr 1fr;
-    padding: 15px 30px 0;
+    padding: 15px;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin-top: 20px;
 }
 .poke-info .poke-view {
-    display: flexbox;
+    display: flex;
+    flex-direction: column;
     justify-self: center;
+    justify-items: center;
     align-items: center;
 }
-.poke-info .poke-view .pokemon {
-    justify-self: center;
-    align-items: center;
+.name-image h2 {
+    text-align: center;
 }
 .poke-info .poke-about {
     display: flex;
@@ -19,13 +25,11 @@
     align-items: center;
     width: 70%;
 }
-.poke-about p {
-    text-align: justify;
-}
 .poke-info img {
     width: 300px;
-    background-color: rgb(240, 225, 158);
-    border: 7px solid rgb(128, 58, 1);
+    background-color: rgb(255, 255, 255, 0.25);
+    border: 7px solid rgb(0, 0, 0, 0.2);
+    background-clip: padding-box;
     border-radius: 20px;
 }
 .poke-info .types {
@@ -35,7 +39,7 @@
 @media (max-width: 600px) {
     .poke-info {
         display: grid;
-        grid-template-rows: 1.5fr 1fr;
+        grid-template-rows: auto auto;
         grid-template-columns: 1fr;
         justify-items: center;
     }
@@ -49,5 +53,6 @@
     }
     .poke-info .poke-about {
         width: 80%;
+        margin: 20px 0;
     }
 }

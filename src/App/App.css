@@ -14,9 +14,11 @@ body {
     font-family: "Roboto Mono", monospace;
     height: 100%;
     width: 100%;
+    background-image: linear-gradient(135deg, #B46C00, #717606, #337337, #006857, #005964, #2F4858);
+    background-size: 500%;
+    animation: animated 10s infinite;
 }
 main {
-    background-color: rgb(255, 153, 0);
     padding: 40px 30px 20px;
     min-height: calc(100vh - 220px);
     width: 100%;
@@ -25,3 +27,14 @@ main > section {
     max-width: 1000px;
     margin: 0 auto;
 }
+@keyframes animated {
+    0%{
+      background-position: 0% 50%;
+    }
+    50%{
+      background-position: 100% 50%;
+    }
+    100%{
+      background-position: 0% 50%;
+    }
+  }

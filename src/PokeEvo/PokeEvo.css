@@ -3,11 +3,14 @@
 }
 .evolution h2 {
     text-align: center;
+    color: #ddd;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 .evolution-number {
-    padding: 25px 0;
+    padding: 10px 0;
     display: grid;
     justify-items: center;
+    
 }
 .opTwo {
     grid-template-columns: 1fr 1fr;
@@ -16,15 +19,20 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 .evolution-number img {
-    display: flex;
-    justify-items: center;
     height: 120px;
     width: 120px;
-    margin: auto;
 }
 .evolution-number div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 180px;
+    background-color: rgba(255,255,255,0.2);
+    border: none;
+    box-shadow: 3px 2px 8px 0px rgba(0,0,0,0.5);
+    border-radius: 10px;
 }
 .evolution-number h3, p {
     display: flex;
@@ -37,11 +45,7 @@
     .opThree {
         grid-template-columns: 1fr;
     }
-    .evolution-number img {
-        display: flex;
-        justify-items: center;
-        height: 150px;
-        width: 150px;
-        margin: auto;
+    .evolution-number div {
+        margin: 10px 0;
     }
 }

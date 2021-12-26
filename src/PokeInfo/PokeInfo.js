@@ -14,7 +14,7 @@ function PokeInfo () {
     return (
         <section className="poke-info">
             <section className="poke-view">
-                <div>
+                <div className='name-image'>
                     <h2>{appName} Nº {info.number}</h2>
                     <img src={info.img} alt=""></img>
                 </div>

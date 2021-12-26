@@ -8,10 +8,9 @@ function Header() {
         <header>
           <section className="header-icons">
             <div className="icons">
-                <a href="https://www.facebook.com/grover.toledo.71/"><span className="flaticon-001-facebook"></span></a>
                 <a href="https://www.twitter.com/grover_toledo"><span className="flaticon-013-twitter-1"></span></a>
                 <a href="https://www.instagram.com/grover.toledo/"><span className="flaticon-011-instagram"></span></a>
-                <a href="https://www.linkedin.com/in/grover-toledo-770578224/"><span className="flaticon-010-linkedin"></span></a>
+                <a href="https://www.linkedin.com/in/grovertoledo/"><span className="flaticon-010-linkedin"></span></a>
                 <a href="https://wa.link/b9fmxk"><span className="flaticon-003-whatsapp"></span></a>
             </div>
           </section>
@@ -21,7 +20,7 @@ function Header() {
                   <span>PokeFinder</span>
               </section>
               <section className="about-me">
-                  <a href="https://github.com/grovertoledo98">About me</a>
+                  <a href="https://github.com/grovertoledo">About me</a>
               </section>
           </nav>
         </header>
